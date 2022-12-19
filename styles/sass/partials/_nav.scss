@@ -1,6 +1,6 @@
 @use  '../variables' as *;
 @use  '../mixins' as *; 
-
+@use  '../responsive' as *;
 
 
 nav {
@@ -21,4 +21,36 @@ nav {
             padding-bottom: 5px;
         }
     }
+}
+
+//responsive nav styling
+//mobile hamburger menu
+.mobile-menu {
+    display: flex;
+    justify-content: flex-end;
+    height: 450px;
+    .fa-bars {
+        color: $text-color;
+        display: none;
+        @include tablet {
+            display: flex;
+        }
+    }
+}
+//mobile responsive hide nav
+.desktop-nav {
+    @include tablet {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.mobile-open {
+    background-color: red;
+    display: flex;
+}
+
+.mobile-closed {
+    display: none;
 }
