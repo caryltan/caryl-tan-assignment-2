@@ -1,0 +1,35 @@
+@use  '../variables' as *;
+@use  '../mixins' as *; 
+@use  '../responsive' as *;
+
+.about {
+    background-color: $section-secondary;
+    padding: 200px 0;
+    text-align: center;
+    @include tablet {
+        padding-bottom: 100px;
+    }
+    @include mobile {
+        padding-bottom: 25px;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include mobile {
+            padding-bottom: 100px;
+        }
+        p {
+            margin: 0 100px;
+            padding-bottom: 40px;
+            @include tablet {
+                margin: 0 25px;
+            }
+        }
+        .button {
+            max-width: 250px;
+            
+        }
+    }   
+}

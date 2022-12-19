@@ -1,0 +1,233 @@
+@use './variables' as *;
+@use  './mixins' as *;
+@use  './responsive' as *;
+
+.blog-body {
+    background: $section-secondary;
+}
+
+.blog-heading {
+    margin-top: 200px;
+    @include tablet {
+        margin-top: 100px;
+    }
+}
+
+.great-locations {
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    @include mobile {
+        padding-top: 50px;
+    }
+    .great-locations-text {
+        padding: 50px;
+        box-shadow: -0.5em 0.5em 0 $box-shadow;
+        margin: 0 2.5em 0 -2.5em;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+    .header-blog-post-image {
+        z-index: 0;
+        right: 0;
+        box-shadow: -3em 3em 0 $box-shadow;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        @include tablet {
+            box-shadow: -1em 1em 0 $box-shadow;
+            width: 75%;
+            left: 13%;
+            position: relative;
+        }
+    }
+    .blog-title {
+        margin-bottom: 15px;
+        @include mobile {
+            line-height: 50px;
+            text-align: center;
+        }
+    }
+    .blog-date {
+        margin: 0;
+        padding-bottom: 50px;
+        @include mobile {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.blog-contact-main-body {
+    display: flex;
+    @include tablet {
+        flex-direction: column;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .side-info {
+        flex-basis: 30%;
+        position: relative;
+        margin: 400px 195px 0 0;
+        @include tablet {
+            margin: 20px 0;
+        }
+        @include mobile {
+            margin-top: 150px;
+        }
+        .side-info-text {
+            background-color: $section-primary;
+            padding: 425px 25px 0 25px;
+            margin: 25px 0 0 150px;
+            @include tablet {  
+                width: 80%;
+                margin-left: 70px; 
+                padding-top: 320px;
+            }
+            @include mobile {
+                padding-top: 175px;
+            }
+        }
+        .side-blog-image {
+            width: 95%;
+            position: absolute;
+            @include tablet {
+                left: 0;
+                max-width: 50%;
+                height: auto;
+            }
+            @include mobile {
+                max-width: 75%;
+            }
+        }
+        .blog-about {
+            padding-bottom: 25px;
+        }
+        .blog-recent-posts {
+            padding-bottom: 15px;
+        }
+    }
+    .blog-page-content {
+        flex-basis: 70%;
+        width: 100%;
+        position: relative;
+    }
+}
+
+//recent posts list bullet styling
+.blog-post-list {
+    li::before {
+        content: "\2022";  
+        color: $bullet-color; 
+        font-weight: bold; 
+        display: inline-block; 
+        width: 1em; 
+        margin-left: -2.5em;
+        padding-right: 1.5em;
+      }
+}
+
+//blog comment section styling
+.blog-comment-section {
+    padding: 50px 50px 50px 0;
+    margin-right: 2.5em;
+    @include tablet {
+        margin: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        flex: 1;
+    }
+    .blog-comment {
+        display: flex;
+        padding: 25px 0;
+        @include mobile {
+            flex-direction: column;
+        }
+        .blog-comment-image-container {
+            width: 100%;
+            flex-basis: 10%;
+            padding-right: 25px;
+        }
+        .blog-comment-text-container {
+            flex-basis: 90%;
+            p {
+                margin-top: -5px;
+            }
+        }
+    }
+}
+
+//blog comment form styling
+.post-comment-form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 25px;
+    margin-right: 2.5em;
+    @include tablet {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-name-email {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+        }
+        input {
+            border: none;
+            border-bottom: 2px solid $form-border;
+            background-color: $section-secondary;
+            line-height: 3em;
+            text-indent: 1em;
+            width: 100%;
+        }
+        .comment-user {
+            flex-basis: 45%;
+        }
+    }
+}
+
+.submit-comment {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 80px 0;
+    textarea {
+        background-color: $section-secondary;
+        border: 2px solid $form-border;
+        border-radius: 4px;
+        line-height: 3em;
+        text-indent: 1em;
+    }
+    button {
+        margin-top: 40px;
+    }
+}
+
+//page specific commons
+a {
+    text-decoration: none;
+    &:visited {
+        color: $text-color;
+    }
+}
+
+.blog-h3 {
+    font-size: 25px;
+} //adjusted h3 styling since font is smaller than indicated on style guide

@@ -1,0 +1,134 @@
+@use './variables' as *;
+@use  './mixins' as *;
+@use  './responsive' as *;
+
+.contact-body {
+    background: $section-secondary;
+}
+
+.contact-main-body {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+        flex-direction: column-reverse;
+    }
+}
+
+.contact-heading {
+    margin-bottom: 0;
+    margin-top: 200px;
+    @include tablet {
+        margin-top: 200px;
+    }
+}
+
+.side-info {
+    @include tablet {
+        margin-top: 25px;
+    }
+    .side-info-container {
+        position: relative;
+        top: 80%;
+        @include tablet {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .contact-info-text {
+        line-height: 15px;
+        @include tablet {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.contact-wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding: 0;
+    margin: 0;
+    @include tablet {
+        padding-bottom: 20px;
+    }
+}
+
+//contact form styling
+.contact-form {
+    background: $section-primary;
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 25px;
+    margin-top: 30px;
+    margin-right: 2.5em;
+    box-shadow: -3em 3em 0 $box-shadow;
+    @include tablet {
+        box-shadow: -1em 1em 0 $box-shadow;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        margin-top: 250px;
+    }
+    @include mobile {
+        box-shadow: -0.5em 0.5em 0 $box-shadow;
+        margin-top: 200px;
+    }
+    form {
+        margin: 50px;
+        @include mobile {
+            margin: 10px;
+        }
+    }
+    .form-name-email {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+        }
+        input {
+            border: none;
+            border-bottom: 2px solid $form-border;
+            background-color: $section-primary;
+            line-height: 3em;
+            text-indent: 1em;
+            width: 100%;
+        }
+        .message-user {
+            flex-basis: 45%;
+        }
+    }
+}
+
+.submit-message {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 40px 0;
+    textarea {
+        background-color: $section-primary;
+        border: 2px solid $form-border;
+        border-radius: 4px;
+        line-height: 3em;
+        text-indent: 1em;
+    }
+    button {
+        margin-top: 40px;
+    }
+}
+
+.contact-footer {
+    margin-top: 200px;
+    @include tablet {
+        margin-top: 25px;
+    }
+}

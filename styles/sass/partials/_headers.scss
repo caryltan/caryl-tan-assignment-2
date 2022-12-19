@@ -1,0 +1,121 @@
+@use '../variables' as *;
+@use  '../mixins' as *;
+@use  '../responsive' as *;
+
+.home-header {
+    background-image: url(../assets/header-image.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include tablet {
+        background-position: 50%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include mobile {
+        background-position: 40%;
+    }
+    h1 {
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+        z-index: 1;
+        @include tablet {
+            bottom: 220px;
+            font-size: 75px;
+            text-align: end;
+            padding-right: 40px;
+        }
+        @include mobile {
+            font-size: 50px;
+            bottom: 30px;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    .header-box-image {
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        bottom: -200px;
+        box-shadow: 0 0 0 3em $box-shadow;
+        margin: 4em 0;
+        @include tablet {
+            width: 50%;
+            height: auto;
+            right: 0;
+            box-shadow: 0 0 0 1em $box-shadow;
+        }
+        @include mobile {
+            width: 75%;
+            bottom: -260px;
+        }
+    }
+}
+
+//blog page cover 'header' image
+.blog-page-body {
+    background-image: url(../assets/blog-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include tablet {
+        height: 50vh;
+    }
+    @include mobile {
+        background-position: 50%;
+        height: 30vh;
+    }
+    h1 {
+        @include mobile {
+            margin: 0;
+            font-size: 50px;
+            padding-top: 75px;
+        }
+    }
+}
+
+//blog page header
+.blog-header { 
+    .blog-contact-h1-container {
+        width: 100%;
+        text-align: center;
+        padding-top: 150px;
+    }
+}
+
+//contact page cover 'header' image
+.contact-page-body {
+    background-image: url(../assets/contact-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include tablet {
+        height: 50vh;
+        background-position: 50%;
+    }
+    @include mobile {
+        background-position: 33%;
+    }
+    h1 {
+        @include mobile {
+            margin: 0;
+            font-size: 50px;
+            padding-top: 75px;
+        }
+    }
+}
+
+//h1 for blog and contact pages
+.blog-contact-heading { 
+    @include font-size(80px);
+    text-align: center;
+    line-height: 92px;
+}

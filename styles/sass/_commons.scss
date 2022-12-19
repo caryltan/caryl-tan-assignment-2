@@ -1,0 +1,153 @@
+@use  'variables' as *;
+@use  'mixins' as *;
+@use  'responsive' as *;
+
+// Headings
+h1 {
+    @include font-size(138px);
+    text-align: center;
+}
+
+h2 {
+    @include font-size(42px);
+    letter-spacing: 1px;
+}
+
+h3 {
+    @include font-size(32px);
+    letter-spacing: 1px;
+}
+
+button {
+    @include font-size(20px);
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+    // background styling
+    background-color: $button;
+    border: none;
+    padding: 5px 20px;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: $text-color;
+        }
+    }
+}
+
+.button {
+    @include font-size(20px);
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+    // background styling
+    background-color: $button;
+    border: none;
+    padding: 5px 20px;
+    a {
+        color: $text-color;
+        text-decoration: none;
+        &:visited {
+            color: $text-color;
+        }
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 32px;
+    color: $text-color;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    @include tablet {
+        width: 90%;
+    }
+}
+
+// ul stylings
+ul {
+    list-style: none;
+    a {
+        color: $text-color;
+        text-decoration: none;
+    }
+    a:visited {
+        color: $text-color;
+    } 
+}
+
+// Email
+.email {
+    @include font-size(26px);
+    letter-spacing: 1.1px;
+    margin-top: 5px;
+}
+
+/* Font Awesome Icon Styling */
+  .icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+//   Footer
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+//Blog and Contact Page Background Colour
+.blog-contact-body {
+    background-color: $section-secondary;
+}
+
+//h1s on blog and contact page
+.blog-heading,
+.contact-heading {
+    @include font-size(80px);
+    line-height: 92px;
+}
+
+//responsive nav styling
+//mobile hamburger menu
+.mobile-menu {
+    position: relative;
+    .fa-bars {
+        color: $text-color;
+        visibility: hidden;
+        @include tablet {
+            visibility: visible;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            z-index: 1;
+            margin-top: -250px;
+        }
+        @include mobile {
+            margin-top: -275px;
+        }
+    }
+}
+//mobile responsive hide nav
+nav {
+    @include tablet {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+//visited link default styling
+a {
+    color: $text-color;
+    &:visited {
+        color: $text-color;
+    }
+}

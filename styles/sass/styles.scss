@@ -1,0 +1,17 @@
+// Setup
+@use 'setup';
+@use 'commons';
+
+// Partials
+@use './partials/nav';
+@use './partials/headers';
+@use './partials/about';
+@use './partials/read-more';
+@use './partials/links-section';
+@use './partials/month-profile';
+@use './partials/gallery';
+
+// Pages
+@use 'contact';
+@use 'blog';
+
