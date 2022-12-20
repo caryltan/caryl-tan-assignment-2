@@ -28,13 +28,12 @@ nav {
 .mobile-menu {
     display: flex;
     justify-content: flex-end;
-    height: 450px;
+    margin-top: 40px;
+    @include tablet {
+        display: flex;
+    }
     .fa-bars {
         color: $text-color;
-        display: none;
-        @include tablet {
-            display: flex;
-        }
     }
 }
 //mobile responsive hide nav
@@ -47,8 +46,20 @@ nav {
 }
 
 .mobile-open {
-    background-color: red;
     display: flex;
+    .fa-solid {
+        position: absolute;
+        z-index: 1;
+    }
+    .mobile-closed {
+        display: block;
+    }
+    ul {
+        @include mobile {
+            flex-direction: column;
+            text-align: right;
+        }
+    }
 }
 
 .mobile-closed {
